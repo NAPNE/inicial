@@ -33,7 +33,7 @@ fetch(endpoint1)
         docID = legislacao.c[3].v.split("file/d/")[1].split("/view")[0];
         fixedDocLink = `https://drive.google.com/uc?export=view&id=${docID}`;
 
-        //console.log(fixedDocLink);
+        console.log(fixedDocLink);
 
         legislacaoDiv.innerHTML = legislacaoDiv.innerHTML + `<div>
         <div class="quemsomos" id="text-grande-sobre-noticia">

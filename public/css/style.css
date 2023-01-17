@@ -78,8 +78,8 @@ html{
 .napneSection {
     padding-top: 1rem;
     padding-bottom: 3rem;
-    /* background-color: var(--cor-principal1); */
-    background-image: url("/public/images/fundo4.png");
+    background-color: var(--cor-principal1);
+    /* background-image: url("/public/images/fundo4.png"); */
 }
 
 #iconeAcess {
@@ -603,8 +603,8 @@ noticias
 .noticiasSection {
     padding-top: 1rem;
     padding-bottom: 2rem;
-    /* background-color: var(--cor-principal1); */
-    background-image: url("/public/images/fundo4.png");
+    background-color: var(--cor-principal1);
+    /* background-image: url("/public/images/fundo4.png"); */
 }
 
 .noticiasSection div {
