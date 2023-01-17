@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="stylesheet" href="./public/css/style.css">
+    <link rel="stylesheet" href="./public/css/tecnologias.css">
+    <link rel="stylesheet" href="./public/css/toggleButton.css">
+    <link rel="stylesheet" href="./ferramentas/regua.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <script src="./ferramentas/ferramentas.js"></script>
+    <script src="./ferramentas/dark-mode.js"></script>
+    <script src="./ferramentas/monocromatico.js"></script>
+    <script src="./ferramentas/alta-saturacao.js"></script>
+    <script src="./ferramentas/saturacao.js"></script>
+    <script src="./ferramentas/epilepsia.js"></script>
+    <script src="./ferramentas/terceira-idade.js"></script>
+    <script src="./ferramentas/font-size-ta.js"></script>
+    <script src="./ferramentas/baixa-visão.js"></script>
+    <script src="./ferramentas/alfabetizacao.js"></script>
+    <script src="./ferramentas/baixa-visao-contraste.js"></script>
+    <script src="./ferramentas/daltonismo.js"></script>
+    <script src="./ferramentas/esconde-itens.js"></script>
+    <script src="./public/js/render_noticias.js"></script>
+
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAPNE - Campus Bagé</title>
+</head>
+
+<body>
+
+    <nav class="navBar">
+
+        
+        <div class="container">
+            <input type="checkbox" id="toggle" />
+            <label class="button" id="iconeAcess" for="toggle"><i class="fa-solid fa-person"></i></label>
+            
+            <div class="nav" id="scrollWrapperNav">
+
+
+                <div class="closeMenu">
+                    <div class="closeDIV">
+                        <!-- <span id="close">&times;</span> -->
+                        <input type="checkbox" id="toggle" />
+                        <label class="buttonC" id="iconeAcess" for="toggle"><i>&times;</i></label>
+                    </div>
+
+
+                    <div class="acessText">
+                        Acessibilidade
+                    </div>
+                </div>
+                
+
+
+                <div class="perfis">
+                    <div class="perfilacessibilidade">
+                        Perfis de acessibilidade
+                    </div>
+                    <!-- <input type="checkbox" id="activate-button-perfil"> -->
+                </div>
+
+
+                <div class="listaFerramentas" aria-hidden="true" style="display: gride;">
+                    <div class="ferramenta">
+                        Pessoa com TDAH
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox" id="activate-rule">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ferramenta">
+                        Pessoa com dislexia
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox" id="activate-rule-sem-overlay">
+                                <span class="slider round"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ferramenta">
+                        Pessoa na terceira idade
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox" id="idoso">
+                                <span class="slider round" id="activate-rule-2"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ferramenta">
+                        Pessoa com baixa visão
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox" id="baixa-visao">
+                                <span class="slider round" id="baixa-visao-contraste"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ferramenta">
+                        Pessoa em alfabetização
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox" id="alfabetizacao">
+                                <span class="slider round" id="activate-rule-sem-overlay-2"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ferramenta">
+                        Pessoa com epilepsia
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round" id="epilepsia"></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ferramenta">
+                        Pessoa com daltonismo
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round" id="daltonismo"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="perfis1">
+                    <div class="perfilacessibilidade">
+                        Ajuste de conteúdo
+                    </div>
+                    <!-- <input type="checkbox" id="activate-button-perfil-2"> -->
+                </div>
+
+
+                <div class="listaFerramentas2" aria-hidden="true" style="display: gride;">
+                    <div class="ferramenta">
+                        Alto contraste escuro
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round" id="dark-mode"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="ferramenta">
+                        Monocromático
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round" id="monocromatico"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="ferramenta">
+                        Baixa saturação
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round" id="saturacao"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="ferramenta">
+                        Alta saturação
+                        <div class="myToggle">
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round" id="alta-saturacao"></span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="ferramenta">
+                        Aumentar fonte
+                        <div class="myToggle">
+                            <label class="switch">
+                                <button id="bot" class="botaoFonte" onclick="FontSize('aumentar')"> <span
+                                        class="material-symbols-outlined">
+                                        add
+                                    </span> </button>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="ferramenta">
+                        Diminuir fonte
+                        <div class="myToggle">
+                            <label class="switch">
+                                <button class="botaoFonte" onclick="FontSize('diminuir')"> <span
+                                        class="material-symbols-outlined">
+                                        remove
+                                    </span></button>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="contato">
+            <ul>
+                <span><i class="fa-regular fa-envelope"></i></span>
+                <li><a class="email">bg-napne@ifsul.edu.br</a></li>
+                <span><i class="fa-brands fa-instagram"></i></span>
+                <li><a class="insta" href="https://www.instagram.com/napnebage/">@napnebage</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <ul id="menu">
+                <li id="drop"><a href="./index.html">Sobre &#9660;</a>
+                    <ul class="dropdown">
+                        <li><a href="#text-grande-sobre"> Quem somos</a></li>
+                        <li><a href="#integrantesID"> Integrantes</a></li>
+                        <li><a href="#vocesabeID"> Você sabe?</a></li>
+                    </ul>
+                </li>
+                <li><a href="./tecnologia-assistiva.html">Tecnologias</a></li>
+                <li><a href="./noticias.html">Notícias</a></li>
+                <li><a href="./legislacao.html">Legislação</a></li>
+                <li><a href="./material-apoio.html">Material de Apoio</a></li>
+                <li><a href="./faleconosco.html">Contato</a>
+                </li>
+            </ul>
+        </div>
+
+    </nav>
+
+    <section class="noticiasSection">
+        <div id="noticiasID">
+            <div class="imgNoticias">
+                <img src="./public/images/ta.png" width="550" alt="notícias">
+                <div class="tecClass">
+                    <ul>
+                        <li>
+                            <div class="reta"></div>
+                        </li>
+                        <li>
+                            <p class="not">Tecnologias Assistivas</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="quemsomos" id="text-grande-sobre-apoio1">
+        <ul>
+            <li>
+                <div class="ret"></div>
+            </li>
+            <li>
+                <p class="qm">Ferramentas gratuitas de Tecnologia Assistiva</p>
+            </li>
+        </ul>
+    </div>
+
+
+    <div class="desc">
+        <p>
+            Abaixo seguem sugestões de ferramentas que visam auxiliar pessoas com deficiência e outras necessidades
+            específicas, sendo elas: leitores de tela, ampliadores de tela, comunicação
+            aumentativa e alternativa, alternativas para mouse, alternativas para teclado, conversor de texto para fala,
+            conversor de fala para texto e tradutores de Língua Portuguesa para Libras.
+        </p>
+    </div>
+
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Leitores de Tela</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            Aplicativos que interage com o Sistema Operacional (Windows, Linux, Android, iOS e outros) e captura toda e
+            qualquer informação apresentada na forma de texto e a transforma em uma resposta falada, utilizando um
+            sintetizador de voz. É o software utilizado por pessoas cegas para uso do computador, tablet e celular.
+        </p>
+    </div>
+
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a href="https://www.nvaccess.org/" target="_blank">NVDA</a> (Windows): Leitor de tela que interage com o
+                        sistema operacional Windows e transforma conteúdo textual em fala.
+                </li>
+                <li>
+                    <a href="https://help.gnome.org/users/orca/stable/introduction.html.pt_BR" target="_blank">ORCA</a>(Linux): Leitor de tela que interage com o
+                        sistema operacional Linux e transforma conteúdo textual em fala.
+                </li>
+                <li>
+                    <a href="https://support.google.com/accessibility/android/topic/3529932?hl=pt-BR&ref_topic=9078845" target="_blank">TalkBack</a>(Android): É o leitor de tela do Google
+                        incluído em dispositivos Android.
+                </li>
+                <li>
+                    <a href="http://intervox.nce.ufrj.br/dosvox/" target="_blank">DOSVOX</a>(Windows): Software voltado a pessoas com
+                        deficiência visual, que se comunica com o usuário através de síntese de voz e o auxilia em
+                        diversas tarefas no computador.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Ampliadores de Tela</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            Buscam aumentar o tamanho da fonte e das imagens na tela do computador para os usuários com baixa visão.
+        </p>
+    </div>
+
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a href="https://support.microsoft.com/pt-br/help/11542/windows-use-magnifier" target="_blank">Lupa do Windows</a>(Windows): Aplicativo padrão do
+                        Windows que permite zoom de até 1600%.
+                </li>
+                <li>
+                    <a href="http://intervox.nce.ufrj.br/dosvox/dosvox.html" target="_blank">LentePRO</a>(Windows): Aplicativo que mostra uma área
+                        da tela ampliada numa janela, como se fosse uma lente de aumento.
+                </li>
+                <li>
+                    <a href="https://zoomit.en.softonic.com/download" target="_blank">ZoomIt</a>(Windows): Aplicativo que acionado um zoom
+                        na tela, possibilitando uma melhor leitura dos itens.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Comunicação Aumentativa e Alternativa</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            A CAA busca permitir que usuário se comunique com as demais pessoas, complementando ou substituindo a fala.
+        </p>
+    </div>
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a href="https://app.cboard.io/board/BJRtpPnP6b" target="_blank">Cboard</a>(Online): Prancha de comunicação online, que
+                        contém diversas pastas temáticas.
+                </li>
+                <li>
+                    <a href="http://scala.ufrgs.br/" target="_blank">Scala</a>(Windows): Aplicativo que auxilia na
+                        alfabetização de crianças autistas através de comunicação alternativa.
+                </li>
+                <li>
+                    <a href="http://projectefressa.blogspot.com.br/2016/01/plaphoons-download.html" target="_blank">Plaphoons </a>(Windows, Linux, Mac, Android):
+                        Aplicativo para criação e utilização de pranchas de comunicação.
+                </li>
+                <li>
+                    <a href="https://sites.google.com/a/nce.ufrj.br/prancha-facil/download" target="_blank">Prancha Fácil </a>(Windows): Aplicativo para criação
+                        de pranchas que facilitam a comunicação com crianças jovens e adultos em diferentes âmbitos.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Alternativas para o mouse</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            Oferece a possibilidade de uso do mouse através de movimentos da cabeça e outros gestos.
+        </p>
+    </div>
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a href="http://eviacam.sourceforge.net/" target="_blank">eViacam</a>(Windows, Linux, Android): Com uma webcam,
+                        permite controlar o cursor por movimentos da cabeça, substituindo o mouse.
+                </li>
+                <li>
+                    <a href="https://www.tecnologiasaccesibles.com/pt-br/content/headmouse" target="_blank">Headmouse</a>(Windows): Além do movimento do mouse
+                        controlado pela cabeça, permite a utilização dos olhos e boca para executar funções do mouse.
+                        Muitas opções de configuração e preferências.
+                </li>
+                <li>
+                    <a href="https://webacessivel.wordpress.com/2010/10/09/headdev/" target="_blank">HeadDev</a> (Windows): Permite controlar o cursor por
+                        movimentos da cabeça, substituindo o mouse.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Alternativas para o teclado</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            Oferece a possibilidade de uso do teclado através de formas alternativas.
+        </p>
+    </div>
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a href="https://support.microsoft.com/pt-br/help/10762/windows-use-on-screen-keyboard" target="_blank">Teclado Virtual Windows</a>(Windows): Exibe um teclado
+                        visual com todas as teclas padrão.
+                </li>
+                <li>
+                    <a href="https://help.apple.com/accessibility/mac/control/10.14/?lang=pt-br#/mchlc74c1c9f" target="_blank">Teclado de Acessibilidade Mac</a>(MacOS): Teclado
+                        virtual que oferece recursos de digitação e navegação avançados.
+            </ul>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Conversor de texto para fala</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            Ferramentas que buscam transformar o texto digitado em áudio sintetizado.
+        </p>
+    </div>
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a href="https://balabolka.br.uptodown.com/windows" target="_blank">Balabouka</a>(Windows): Leitor de tela que interage
+                        com o sistema operacional Windows e transforma conteúdo textual em fala.
+                </li>
+                <li>
+                    <a href="https://ttsreader.com/" target="_blank">Text To Speech Reader</a>(online): Leitor de textos
+                        que conta com personalização na velocidade da fala e upload de arquivos de texto, PDF e
+                        ePUB.
+                </li>
+                <li>
+                    <a href="https://chrome.google.com/webstore/detail/speakit-text-to-speech-fo/aljmkoflmjkklddjideacgmofobfkhkd?hl=pt-BR" target="_blank">SpeakIt</a>(extensão Chrome): Extensão que detecta
+                        automaticamente o idioma do texto selecionado.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Conversor de fala para texto</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            Ferramentas que inserem um texto utilizando a fala, no lugar da digitação convencional.
+        </p>
+    </div>
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a>Ditado do Documentos Google: </a> <a> Utilizando a própria ferramenta de documentos da Google.
+                        Abra
+                        o documentos Google e clique em Ferramentas > Digitação por voz.</a>
+                </li>
+                <li>
+                    <a>Ditado do Microsoft Word:</a> <a> Para ativar a ferramenta basta clicar no botão Ditar na barra
+                        superior à direita.</a>
+                </li>
+                <li>
+                    <a>Ditado do macOS:</a> <a> (macOS): Para ativar a ferramenta basta clicar no menu Apple >
+                        Preferências > Teclado > Ditado.</a>
+                </li>
+                <li>
+                    <a href="https://speechnotes.co/pt/#app" target="_blank">Speechnotes</a>(online): Conversor de fala em
+                        texto.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div>
+        <div class="quemsomos" id="text-grande-sobre-apoio">
+            <ul>
+                <li>
+                    <div class="retinha"></div>
+                </li>
+                <li>
+                    <p class="nomeNoticia">Tradutor de Língua Portuguesa para Libras</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="descricao">
+        <p>
+            Ferramentas que auxiliam na tradução da língua portuguesa para libras.
+        </p>
+    </div>
+
+
+    <div>
+        <div class="quemsomostexto" id="sobre-texto-ta">
+            <ul>
+                <li>
+                    <a href="https://www.handtalk.me/app" target="_blank">HandTalk</a>(Android e iOS): Traduz texto e áudio de
+                        português para Libras.
+                </li>
+                <li>
+                    <a href="http://www.vlibras.gov.br/#baixar" target="_blank">VLibras</a>(Windows, Linux, Android, iOS, extensão
+                        para Chrome, Firefox e Safari): Ferramenta utilizada na tradução automática do Português para a
+                        Língua Brasileira de Sinais..
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="descricao">
+        <p>
+        </p>
+    </div>
+
+
+
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+
+<footer>
+    <div class="rodape">
+        <div>
+            <img src="./public/images/logo-if.png" width="250" alt="logo ifsul">
+        </div>
+        <div>
+            <p>NAPNE - Núcleo de Apoio às Pessoas com Necessidades Especiais</p>
+        </div>
+    </div>
+</footer>
+
+
+    <div class="" id="overlayTop"></div>
+    <div class="" id="regua"></div>
+    <div class="" id="overlayBottom"></div>
+
+
+</body>
+
+</html>
